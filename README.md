@@ -22,11 +22,13 @@ Download the files and adjust the settings based on your environment:
 
 ## How to build and run the container:
 
-Use "." at the end to point to the current directory where Dockerfile exists:
+Use char "." at the end to point to the current directory where Dockerfile exists. Substitute `image_name` by the desired name:
 
-`$ docker build -t image_name .`
+`docker build -t image_name .`
 
-`$ docker run -d -p 5044:5044/udp -v /path/to/your/logstash.conf:/usr/share/logstash/pipeline/logstash.conf --name container_name image_name`
+After image build, run the image by command run below. Substitute `/path/to/your/logstash.conf` and `container_name` by location of logstash configuration file and desired container name:
+
+`docker run -d -p 5044:5044/udp -v /path/to/your/logstash.conf:/usr/share/logstash/pipeline/logstash.conf --name container_name image_name`
 
 ## See also:
 
